@@ -1,5 +1,7 @@
 # Sign Language (ASL) to Text Translation (Computer Vision)
 
+![COMPUTER VISION — Static ASL alphabet classification](assets/portfolio-banner.svg)
+
 Academic computer-vision project for classifying isolated, static American Sign Language alphabet images and displaying predictions from an OpenCV webcam region of interest. The verified scope is 29 image classes—A–Z, `del`, `nothing`, and `space`—rather than continuous sign-language or sentence translation.
 
 ## Published material
