@@ -4,5 +4,6 @@ __pycache__/
 asl_alphabet_train/
 asl_alphabet_test/
 *.h5
+!models/cnn_for_asl_grayscale.h5
 *.keras
 *.log

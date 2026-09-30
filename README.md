@@ -43,3 +43,15 @@ The system classifies isolated static signs rather than continuous sign language
 
 - Adam El Akkaoui
 - Mohammed Zaidouh
+
+## Academic artefacts and data
+
+- [French academic report (PDF)](docs/academic-report-fr.pdf)
+- `models/cnn_for_asl_grayscale.h5` — submitted 23.6 MiB trained model, assessed separately from the data
+- External dataset: [ASL Alphabet on Kaggle](https://www.kaggle.com/datasets/grassknoted/asl-alphabet); the submitted tree held 86,851 training and 28 test images and is not redistributed
+
+No presentation or demonstration video was found.
+
+## Testing and limitations
+
+The cleaned notebook validates with no stored outputs. Training and webcam inference were not rerun. Accuracy `0.9285714` and loss `11.2689457` are historical notebook values, not reproduced portfolio metrics. This is static-alphabet classification, not continuous sign-language translation.
