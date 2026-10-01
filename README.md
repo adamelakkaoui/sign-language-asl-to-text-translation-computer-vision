@@ -13,6 +13,12 @@ Academic computer-vision project for classifying isolated, static American Sign 
 
 The external **ASL Alphabet** dataset is not redistributed. Download it from the [official Kaggle dataset page](https://www.kaggle.com/datasets/grassknoted/asl-alphabet). The submitted local tree contained 86,851 training images and 28 test images. No project presentation or demonstration video was found.
 
+## Dataset
+
+The project uses the public **ASL Alphabet Dataset** referenced in the academic report. It contains 29 classes: the 26 alphabet letters plus `del`, `nothing` and `space`.
+
+Because the dataset is large, it is not redistributed in this repository. For training or evaluation, download the ASL Alphabet dataset from Kaggle (`grassknoted/asl-alphabet`) and place the training and test folders according to the notebook paths.
+
 ## Model contract and preprocessing
 
 The H5 metadata records Keras 3.13.2. The model accepts `(batch, 200, 200, 1)` grayscale images and returns 29 probabilities. The original preprocessing is intentionally preserved: images are resized or loaded at 200×200, kept as `uint8`, reshaped to one channel, and are **not normalized**.
