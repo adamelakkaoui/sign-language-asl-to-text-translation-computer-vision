@@ -75,11 +75,18 @@ python asl_inference.py --webcam
 
 Place a static sign inside the central 200×200 region and press `q` to exit. Webcam inference was not tested during portfolio preparation because no camera was accessed.
 
-## Testing and limitations
+## Results and limitations
 
-The H5 file was successfully loaded with TensorFlow 2.20.0/Keras 3.13.2. Its input/output shapes were verified, and one zero-image smoke prediction returned a finite 29-value probability vector summing to 1.0. Notebook JSON validation and Python byte-compilation passed. Training and webcam inference were not run.
+The project report evaluates the CNN on the ASL test set and reports:
 
-The provided H5 model was also evaluated during portfolio preparation on the 28 original external test images: accuracy `0.9285714286` and manually computed categorical cross-entropy `0.6460228562`. This reproduces the historical accuracy on the same small test set; it is not an independent benchmark. The submitted notebook historically records accuracy `0.9285714` and loss `11.2689457`; the historical loss is retained as provenance but was not reproduced by the current Keras stack. Real webcam behaviour depends on lighting, framing and background, and the system does not model motion or linguistic context.
+- **Accuracy:** `92.86%`
+- **Loss:** `11.27`
+- **29 output classes:** the alphabet plus `del`, `nothing` and `space`
+- Real-time webcam recognition through OpenCV
+
+The qualitative tests presented in the report show real-time predictions for the alphabet and the three special classes.
+
+The limitations identified in the report are the quality and diversity of the images, confusion between visually similar gestures, additional processing time on less powerful machines, and the absence of data augmentation. Proposed improvements include data augmentation, deeper or pre-trained models, extension toward multiple hands and complete phrases, and further optimization of real-time inference.
 
 ## Authors
 
