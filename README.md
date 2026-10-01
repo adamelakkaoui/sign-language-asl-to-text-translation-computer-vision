@@ -7,7 +7,6 @@ Academic computer-vision project for translating static American Sign Language (
 ## Published material
 
 - `asl_to_text.ipynb` — project notebook for loading data, defining and training the CNN, evaluation, and webcam inference.
-- `asl_inference.py` — small command-line entry point that loads the submitted model without training.
 - `models/cnn_for_asl_grayscale.h5` — submitted 23.6 MiB trained model.
 - [French academic report (PDF)](docs/academic-report-fr.pdf).
 
@@ -41,13 +40,8 @@ python -m pip install -r requirements.txt
 
 ## Use the provided model
 
-From the repository root, run a single-image prediction:
+Open `asl_to_text.ipynb` and follow the project cells for model loading, evaluation and webcam inference. The trained model is stored at `models/cnn_for_asl_grayscale.h5`.
 
-```bash
-python asl_inference.py --image path/to/a/200x200-or-larger-image.jpg
-```
-
-Or open `asl_to_text.ipynb` and run the import, configuration, helper-function, model-loading, and desired inference cells. The provided trained model is stored at `models/cnn_for_asl_grayscale.h5`.
 
 ## Optional evaluation
 
@@ -65,11 +59,8 @@ Training uses the public ASL Alphabet training folders organized by class. The n
 
 ## Webcam inference
 
-```bash
-python asl_inference.py --webcam
-```
+The notebook contains the OpenCV real-time pipeline used in the project. A central region of interest is captured from the webcam, converted to grayscale, prepared for the CNN, and the predicted class is displayed on screen. The academic report presents real-time examples for the alphabet and the three special classes.
 
-Place a static sign inside the central 200×200 region and press `q` to exit. The academic report presents real-time webcam examples for the alphabet and the three special classes.
 
 ## Results and limitations
 
