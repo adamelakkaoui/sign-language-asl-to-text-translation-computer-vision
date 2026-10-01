@@ -7,7 +7,7 @@ Academic computer-vision project for translating static American Sign Language (
 ## Published material
 
 - `asl_to_text.ipynb` — project notebook for loading data, defining and training the CNN, evaluation, and webcam inference.
-- `models/cnn_for_asl_grayscale.h5` — submitted 23.6 MiB trained model.
+- `models/cnn_for_asl_grayscale.h5` — trained CNN model used in the project.
 - [French academic report (PDF)](docs/academic-report-fr.pdf).
 
 The external **ASL Alphabet** dataset is not redistributed because of its size. Download it from the [Kaggle dataset page](https://www.kaggle.com/datasets/grassknoted/asl-alphabet).
