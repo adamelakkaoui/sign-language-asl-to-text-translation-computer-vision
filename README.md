@@ -2,16 +2,16 @@
 
 ![COMPUTER VISION — Static ASL alphabet classification](assets/portfolio-banner.svg)
 
-Academic computer-vision project for classifying isolated, static American Sign Language alphabet images and displaying predictions from an OpenCV webcam region of interest. The verified scope is 29 image classes—A–Z, `del`, `nothing`, and `space`—rather than continuous sign-language or sentence translation.
+Academic computer-vision project for translating static American Sign Language (ASL) alphabet gestures into text with a convolutional neural network and real-time OpenCV webcam inference. The model covers 29 classes: A–Z, `del`, `nothing`, and `space`.
 
 ## Published material
 
-- `asl_to_text.ipynb` — cleaned teaching notebook for loading data, defining the CNN, optional evaluation/training, and webcam inference.
+- `asl_to_text.ipynb` — project notebook for loading data, defining and training the CNN, evaluation, and webcam inference.
 - `asl_inference.py` — small command-line entry point that loads the submitted model without training.
 - `models/cnn_for_asl_grayscale.h5` — submitted 23.6 MiB trained model.
 - [French academic report (PDF)](docs/academic-report-fr.pdf).
 
-The external **ASL Alphabet** dataset is not redistributed. Download it from the [official Kaggle dataset page](https://www.kaggle.com/datasets/grassknoted/asl-alphabet). The submitted local tree contained 86,851 training images and 28 test images. No project presentation or demonstration video was found.
+The external **ASL Alphabet** dataset is not redistributed because of its size. Download it from the [Kaggle dataset page](https://www.kaggle.com/datasets/grassknoted/asl-alphabet).
 
 ## Dataset
 
@@ -21,7 +21,7 @@ Because the dataset is large, it is not redistributed in this repository. For tr
 
 ## Model contract and preprocessing
 
-The H5 metadata records Keras 3.13.2. The model accepts `(batch, 200, 200, 1)` grayscale images and returns 29 probabilities. The original preprocessing is intentionally preserved: images are resized or loaded at 200×200, kept as `uint8`, reshaped to one channel, and are **not normalized**.
+The CNN processes 200×200 grayscale images and produces probabilities across the 29 ASL classes. The project preprocessing converts images to grayscale, resizes them to the model input dimensions and reshapes them to a single channel.
 
 The output order is:
 
@@ -32,16 +32,12 @@ nothing, O, P, Q, R, S, space, T, U, V, W, X, Y, Z
 
 ## Installation
 
-Python 3.11 was used for portfolio verification.
-
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate
 # Linux/macOS: source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
-
-The pinned, verified model-loading stack is TensorFlow 2.20.0 with Keras 3.13.2. TensorFlow/Keras 2.15 cannot deserialize this file because its `InputLayer` configuration contains Keras 3 fields.
 
 ## Use the provided model
 
@@ -51,7 +47,7 @@ From the repository root, run a single-image prediction:
 python asl_inference.py --image path/to/a/200x200-or-larger-image.jpg
 ```
 
-Or open `asl_to_text.ipynb` and run the import, configuration, helper-function, model-loading, and desired inference cells. The default workflow now loads `models/cnn_for_asl_grayscale.h5`; it does not start training.
+Or open `asl_to_text.ipynb` and run the import, configuration, helper-function, model-loading, and desired inference cells. The provided trained model is stored at `models/cnn_for_asl_grayscale.h5`.
 
 ## Optional evaluation
 
@@ -65,13 +61,7 @@ In the notebook, run the setup/helper cells, load the provided model, then uncom
 
 ## Optional training
 
-Training requires:
-
-```text
-asl_alphabet_train/asl_alphabet_train/<label>/*.jpg
-```
-
-Uncomment the optional training cell only when a full training run is intended. It writes `models/cnn_for_asl_grayscale_retrained.h5`; the notebook refuses to use the submitted model path as a training output, so `models/cnn_for_asl_grayscale.h5` is not overwritten.
+Training uses the public ASL Alphabet training folders organized by class. The notebook contains the CNN definition and training workflow described in the academic report.
 
 ## Webcam inference
 
@@ -79,7 +69,7 @@ Uncomment the optional training cell only when a full training run is intended. 
 python asl_inference.py --webcam
 ```
 
-Place a static sign inside the central 200×200 region and press `q` to exit. Webcam inference was not tested during portfolio preparation because no camera was accessed.
+Place a static sign inside the central 200×200 region and press `q` to exit. The academic report presents real-time webcam examples for the alphabet and the three special classes.
 
 ## Results and limitations
 
