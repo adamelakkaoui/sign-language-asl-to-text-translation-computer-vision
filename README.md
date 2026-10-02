@@ -27,14 +27,9 @@ A, B, C, D, del, E, F, G, H, I, J, K, L, M, N,
 nothing, O, P, Q, R, S, space, T, U, V, W, X, Y, Z
 ```
 
-## Installation
+## Project environment
 
-```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# Linux/macOS: source .venv/bin/activate
-python -m pip install -r requirements.txt
-```
+The project uses Python with TensorFlow/Keras and OpenCV, as documented in the report and notebook.
 
 ## Use the provided model
 
