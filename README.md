@@ -1,5 +1,8 @@
 # Sign Language (ASL) to Text Translation (Computer Vision)
 
+![COMPUTER VISION — ASL alphabet classification](assets/portfolio-banner.svg)
+
+
 Academic computer-vision project for translating static American Sign Language (ASL) alphabet gestures into text with a convolutional neural network and real-time OpenCV webcam inference. The model covers 29 classes: A–Z, `del`, `nothing`, and `space`.
 
 ## Published material
