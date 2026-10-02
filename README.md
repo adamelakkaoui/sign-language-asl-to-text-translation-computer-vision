@@ -1,7 +1,5 @@
 # Sign Language (ASL) to Text Translation (Computer Vision)
 
-![COMPUTER VISION — Static ASL alphabet classification](assets/portfolio-banner.svg)
-
 Academic computer-vision project for translating static American Sign Language (ASL) alphabet gestures into text with a convolutional neural network and real-time OpenCV webcam inference. The model covers 29 classes: A–Z, `del`, `nothing`, and `space`.
 
 ## Published material
@@ -42,7 +40,6 @@ python -m pip install -r requirements.txt
 
 Open `asl_to_text.ipynb` and follow the project cells for model loading, evaluation and webcam inference. The trained model is stored at `models/cnn_for_asl_grayscale.h5`.
 
-
 ## Optional evaluation
 
 Place the official test images as follows:
@@ -60,7 +57,6 @@ Training uses the public ASL Alphabet training folders organized by class. The n
 ## Webcam inference
 
 The notebook contains the OpenCV real-time pipeline used in the project. A central region of interest is captured from the webcam, converted to grayscale, prepared for the CNN, and the predicted class is displayed on screen. The academic report presents real-time examples for the alphabet and the three special classes.
-
 
 ## Results and limitations
 
